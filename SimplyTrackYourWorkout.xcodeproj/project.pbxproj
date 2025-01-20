@@ -195,6 +195,9 @@
 			);
 			mainGroup = 63FD265C2D3EBE9C00BA12DB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				63FD26A12D3EC2F000BA12DB /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 63FD26662D3EBE9C00BA12DB /* Products */;
 			projectDirPath = "";
@@ -558,6 +561,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63FD26A12D3EC2F000BA12DB /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 63FD265D2D3EBE9C00BA12DB /* Project object */;
 }
