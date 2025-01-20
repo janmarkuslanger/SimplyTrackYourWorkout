@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		63FD26762D3EBE9D00BA12DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63FD265D2D3EBE9C00BA12DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63FD26642D3EBE9C00BA12DB;
+			remoteInfo = SimplyTrackYourWorkout;
+		};
+		63FD26802D3EBE9D00BA12DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63FD265D2D3EBE9C00BA12DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63FD26642D3EBE9C00BA12DB;
+			remoteInfo = SimplyTrackYourWorkout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		63FD26652D3EBE9C00BA12DB /* SimplyTrackYourWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplyTrackYourWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63FD26752D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplyTrackYourWorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63FD267F2D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplyTrackYourWorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		63FD26672D3EBE9C00BA12DB /* SimplyTrackYourWorkout */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimplyTrackYourWorkout;
+			sourceTree = "<group>";
+		};
+		63FD26782D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimplyTrackYourWorkoutTests;
+			sourceTree = "<group>";
+		};
+		63FD26822D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimplyTrackYourWorkoutUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63FD26622D3EBE9C00BA12DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63FD26722D3EBE9D00BA12DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63FD267C2D3EBE9D00BA12DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63FD265C2D3EBE9C00BA12DB = {
+			isa = PBXGroup;
+			children = (
+				63FD26672D3EBE9C00BA12DB /* SimplyTrackYourWorkout */,
+				63FD26782D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */,
+				63FD26822D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */,
+				63FD26662D3EBE9C00BA12DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63FD26662D3EBE9C00BA12DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63FD26652D3EBE9C00BA12DB /* SimplyTrackYourWorkout.app */,
+				63FD26752D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests.xctest */,
+				63FD267F2D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63FD26642D3EBE9C00BA12DB /* SimplyTrackYourWorkout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63FD26892D3EBE9D00BA12DB /* Build configuration list for PBXNativeTarget "SimplyTrackYourWorkout" */;
+			buildPhases = (
+				63FD26612D3EBE9C00BA12DB /* Sources */,
+				63FD26622D3EBE9C00BA12DB /* Frameworks */,
+				63FD26632D3EBE9C00BA12DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				63FD26672D3EBE9C00BA12DB /* SimplyTrackYourWorkout */,
+			);
+			name = SimplyTrackYourWorkout;
+			packageProductDependencies = (
+			);
+			productName = SimplyTrackYourWorkout;
+			productReference = 63FD26652D3EBE9C00BA12DB /* SimplyTrackYourWorkout.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63FD26742D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63FD268C2D3EBE9D00BA12DB /* Build configuration list for PBXNativeTarget "SimplyTrackYourWorkoutTests" */;
+			buildPhases = (
+				63FD26712D3EBE9D00BA12DB /* Sources */,
+				63FD26722D3EBE9D00BA12DB /* Frameworks */,
+				63FD26732D3EBE9D00BA12DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63FD26772D3EBE9D00BA12DB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				63FD26782D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */,
+			);
+			name = SimplyTrackYourWorkoutTests;
+			packageProductDependencies = (
+			);
+			productName = SimplyTrackYourWorkoutTests;
+			productReference = 63FD26752D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		63FD267E2D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63FD268F2D3EBE9D00BA12DB /* Build configuration list for PBXNativeTarget "SimplyTrackYourWorkoutUITests" */;
+			buildPhases = (
+				63FD267B2D3EBE9D00BA12DB /* Sources */,
+				63FD267C2D3EBE9D00BA12DB /* Frameworks */,
+				63FD267D2D3EBE9D00BA12DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63FD26812D3EBE9D00BA12DB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				63FD26822D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */,
+			);
+			name = SimplyTrackYourWorkoutUITests;
+			packageProductDependencies = (
+			);
+			productName = SimplyTrackYourWorkoutUITests;
+			productReference = 63FD267F2D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63FD265D2D3EBE9C00BA12DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					63FD26642D3EBE9C00BA12DB = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					63FD26742D3EBE9D00BA12DB = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 63FD26642D3EBE9C00BA12DB;
+					};
+					63FD267E2D3EBE9D00BA12DB = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 63FD26642D3EBE9C00BA12DB;
+					};
+				};
+			};
+			buildConfigurationList = 63FD26602D3EBE9C00BA12DB /* Build configuration list for PBXProject "SimplyTrackYourWorkout" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63FD265C2D3EBE9C00BA12DB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 63FD26662D3EBE9C00BA12DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63FD26642D3EBE9C00BA12DB /* SimplyTrackYourWorkout */,
+				63FD26742D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */,
+				63FD267E2D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63FD26632D3EBE9C00BA12DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63FD26732D3EBE9D00BA12DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63FD267D2D3EBE9D00BA12DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63FD26612D3EBE9C00BA12DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63FD26712D3EBE9D00BA12DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63FD267B2D3EBE9D00BA12DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63FD26772D3EBE9D00BA12DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63FD26642D3EBE9C00BA12DB /* SimplyTrackYourWorkout */;
+			targetProxy = 63FD26762D3EBE9D00BA12DB /* PBXContainerItemProxy */;
+		};
+		63FD26812D3EBE9D00BA12DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63FD26642D3EBE9C00BA12DB /* SimplyTrackYourWorkout */;
+			targetProxy = 63FD26802D3EBE9D00BA12DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		63FD26872D3EBE9D00BA12DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63FD26882D3EBE9D00BA12DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63FD268A2D3EBE9D00BA12DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimplyTrackYourWorkout/Preview Content\"";
+				DEVELOPMENT_TEAM = RKUHJD4GZ7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		63FD268B2D3EBE9D00BA12DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimplyTrackYourWorkout/Preview Content\"";
+				DEVELOPMENT_TEAM = RKUHJD4GZ7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		63FD268D2D3EBE9D00BA12DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RKUHJD4GZ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimplyTrackYourWorkout.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimplyTrackYourWorkout";
+			};
+			name = Debug;
+		};
+		63FD268E2D3EBE9D00BA12DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RKUHJD4GZ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimplyTrackYourWorkout.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimplyTrackYourWorkout";
+			};
+			name = Release;
+		};
+		63FD26902D3EBE9D00BA12DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RKUHJD4GZ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimplyTrackYourWorkout;
+			};
+			name = Debug;
+		};
+		63FD26912D3EBE9D00BA12DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RKUHJD4GZ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimplyTrackYourWorkout;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63FD26602D3EBE9C00BA12DB /* Build configuration list for PBXProject "SimplyTrackYourWorkout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63FD26872D3EBE9D00BA12DB /* Debug */,
+				63FD26882D3EBE9D00BA12DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63FD26892D3EBE9D00BA12DB /* Build configuration list for PBXNativeTarget "SimplyTrackYourWorkout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63FD268A2D3EBE9D00BA12DB /* Debug */,
+				63FD268B2D3EBE9D00BA12DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63FD268C2D3EBE9D00BA12DB /* Build configuration list for PBXNativeTarget "SimplyTrackYourWorkoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63FD268D2D3EBE9D00BA12DB /* Debug */,
+				63FD268E2D3EBE9D00BA12DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63FD268F2D3EBE9D00BA12DB /* Build configuration list for PBXNativeTarget "SimplyTrackYourWorkoutUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63FD26902D3EBE9D00BA12DB /* Debug */,
+				63FD26912D3EBE9D00BA12DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63FD265D2D3EBE9C00BA12DB /* Project object */;
+}
