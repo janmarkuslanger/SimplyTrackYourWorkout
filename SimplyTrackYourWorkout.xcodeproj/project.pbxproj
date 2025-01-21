@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		63FD26BB2D3EC51400BA12DB /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 63FD26BA2D3EC51400BA12DB /* SQLite */; };
+		63FD27522D40329300BA12DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FD27512D40329300BA12DB /* Assets.xcassets */; };
+		63FD27542D40336200BA12DB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63FD27532D40335C00BA12DB /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		63FD26652D3EBE9C00BA12DB /* SimplyTrackYourWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplyTrackYourWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FD26752D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplyTrackYourWorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FD267F2D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplyTrackYourWorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63FD27512D40329300BA12DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63FD27532D40335C00BA12DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +84,8 @@
 		63FD265C2D3EBE9C00BA12DB = {
 			isa = PBXGroup;
 			children = (
+				63FD27532D40335C00BA12DB /* Info.plist */,
+				63FD27512D40329300BA12DB /* Assets.xcassets */,
 				63FD26782D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */,
 				63FD26822D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */,
 				63FD26662D3EBE9C00BA12DB /* Products */,
@@ -221,6 +227,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FD27542D40336200BA12DB /* Info.plist in Resources */,
+				63FD27522D40329300BA12DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,11 +411,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"SimplyTrackYourWorkout/Preview Content\"";
 				DEVELOPMENT_TEAM = RKUHJD4GZ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -418,11 +427,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -432,11 +445,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"SimplyTrackYourWorkout/Preview Content\"";
 				DEVELOPMENT_TEAM = RKUHJD4GZ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -447,11 +461,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout.SimplyTrackYourWorkout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janmarkuslanger.SimplyTrackYourWorkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
