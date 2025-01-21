@@ -1,14 +1,19 @@
+//
+//  EditTemplateExercisesView.swift
+//  SimplyTrackYourWorkout
+//
+//  Created by Jan-Markus Langer on 21.01.25.
+//
 import SwiftUI
 
 struct EditTemplateExercisesView: View {
     let templateID: Int64
-    @State private var exercises: [(id: Int64, name: String, sets: Int)] = []
+    @State private var exercises: [(id: Int64, name: String, sets: Int, sortIndex: Int)] = []
     @State private var selectedExercise: String = ExerciseConstants.exercises.first?.name ?? ""
     @State private var sets: String = ""
 
     var body: some View {
         VStack {
-            // Liste der bestehenden Übungen
             List {
                 ForEach(exercises, id: \.id) { exercise in
                     HStack {
@@ -22,32 +27,32 @@ struct EditTemplateExercisesView: View {
                         }
                     }
                 }
+                .onMove(perform: moveExercise)
+            }
+            .toolbar{
+                EditButton()
             }
 
-            // Auswahl und Hinzufügen neuer Übungen
-            VStack {
-                Picker("Exercise", selection: $selectedExercise) {
-                    ForEach(ExerciseConstants.exercises, id: \.name) { exercise in
-                        Text("\(exercise.name) (\(exercise.focus))").tag(exercise.name)
-                    }
+            Picker("Exercise", selection: $selectedExercise) {
+                ForEach(ExerciseConstants.exercises, id: \.name) { exercise in
+                    Text("\(exercise.name) (\(exercise.focus))").tag(exercise.name)
                 }
-                .pickerStyle(WheelPickerStyle())
+            }
+            .pickerStyle(WheelPickerStyle())
+            .padding()
+
+            TextField("Sets", text: $sets)
+                .keyboardType(.numberPad)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
-                TextField("Sets", text: $sets)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            Button(action: addExercise) {
+                Text("Add Exercise")
                     .padding()
-
-                Button(action: addExercise) {
-                    Text("Add Exercise")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
             }
-            .padding()
 
             Spacer()
         }
@@ -65,10 +70,12 @@ struct EditTemplateExercisesView: View {
             return
         }
 
+        let newSortIndex = (exercises.last?.sortIndex ?? -1) + 1
         if let _ = TemplateExerciseManager.shared.createTemplateExercise(
             templateID: templateID,
             name: selectedExercise,
-            sets: setsValue
+            sets: setsValue,
+            sortIndex: newSortIndex
         ) {
             sets = ""
             loadExercises()
@@ -84,4 +91,21 @@ struct EditTemplateExercisesView: View {
             print("Failed to delete exercise")
         }
     }
+
+    private func moveExercise(from source: IndexSet, to destination: Int) {
+        exercises.move(fromOffsets: source, toOffset: destination)
+
+        for (index, exercise) in exercises.enumerated() {
+            if exercise.sortIndex != index {
+                TemplateExerciseManager.shared.updateSortIndex(exerciseID: exercise.id, newSortIndex: index)
+            }
+        }
+
+        exercises = exercises.enumerated().map { (index, exercise) in
+            var updatedExercise = exercise
+            updatedExercise.sortIndex = index
+            return updatedExercise
+        }
+    }
+
 }

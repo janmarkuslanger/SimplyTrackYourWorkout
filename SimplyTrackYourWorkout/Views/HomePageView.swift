@@ -14,8 +14,18 @@ struct HomePageView: View {
                     }
                 }
                 .onAppear(perform: loadTemplates)
+
+                NavigationLink(destination: ManageTemplatesView()) {
+                    Text("Manage Templates")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .padding()
+                }
             }
-            .navigationTitle("Templates")
+            .navigationTitle("Track Workout")
         }
     }
 

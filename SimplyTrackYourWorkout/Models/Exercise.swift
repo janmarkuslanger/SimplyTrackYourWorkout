@@ -1,3 +1,11 @@
+//
+//  Exercise.swift
+//  SimplyTrackYourWorkout
+//
+//  Created by Jan-Markus Langer on 21.01.25.
+//
+
+
 import Foundation
 
 struct Exercise {

@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		63FD26BB2D3EC51400BA12DB /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 63FD26BA2D3EC51400BA12DB /* SQLite */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		63FD26762D3EBE9D00BA12DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,11 +34,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		63FD26672D3EBE9C00BA12DB /* SimplyTrackYourWorkout */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SimplyTrackYourWorkout;
-			sourceTree = "<group>";
-		};
 		63FD26782D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SimplyTrackYourWorkoutTests;
@@ -45,6 +44,11 @@
 			path = SimplyTrackYourWorkoutUITests;
 			sourceTree = "<group>";
 		};
+		63FD26EA2D3FD8A700BA12DB /* SimplyTrackYourWorkout */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimplyTrackYourWorkout;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FD26BB2D3EC51400BA12DB /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +80,10 @@
 		63FD265C2D3EBE9C00BA12DB = {
 			isa = PBXGroup;
 			children = (
-				63FD26672D3EBE9C00BA12DB /* SimplyTrackYourWorkout */,
 				63FD26782D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */,
 				63FD26822D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */,
 				63FD26662D3EBE9C00BA12DB /* Products */,
+				63FD26EA2D3FD8A700BA12DB /* SimplyTrackYourWorkout */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,10 +113,11 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				63FD26672D3EBE9C00BA12DB /* SimplyTrackYourWorkout */,
+				63FD26EA2D3FD8A700BA12DB /* SimplyTrackYourWorkout */,
 			);
 			name = SimplyTrackYourWorkout;
 			packageProductDependencies = (
+				63FD26BA2D3EC51400BA12DB /* SQLite */,
 			);
 			productName = SimplyTrackYourWorkout;
 			productReference = 63FD26652D3EBE9C00BA12DB /* SimplyTrackYourWorkout.app */;
@@ -572,6 +578,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63FD26BA2D3EC51400BA12DB /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63FD26A12D3EC2F000BA12DB /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63FD265D2D3EBE9C00BA12DB /* Project object */;
 }

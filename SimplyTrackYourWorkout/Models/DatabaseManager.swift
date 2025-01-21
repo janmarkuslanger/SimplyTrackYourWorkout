@@ -24,6 +24,7 @@ class DatabaseManager {
     private let templateExerciseTemplateID = SQLite.Expression<Int64>("template_id")
     private let templateExerciseName = SQLite.Expression<String>("name")
     private let templateExerciseSets = SQLite.Expression<Int>("sets")
+    private let templateExerciseSortIndex = SQLite.Expression<Int>("sort_index")
 
     private let workoutID = SQLite.Expression<Int64>("id")
     private let workoutDate = SQLite.Expression<String>("date")
@@ -63,6 +64,7 @@ class DatabaseManager {
             t.column(templateExerciseTemplateID)
             t.column(templateExerciseName)
             t.column(templateExerciseSets)
+            t.column(templateExerciseSortIndex, defaultValue: 0)
         })
 
         try db?.run(workouts.create(ifNotExists: true) { t in

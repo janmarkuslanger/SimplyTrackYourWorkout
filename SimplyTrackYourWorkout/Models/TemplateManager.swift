@@ -30,13 +30,14 @@ class TemplateManager {
         }
     }
 
-    func readTemplates() -> [String] {
-        var result = [String]()
+    func readTemplates() -> [(id: Int64, name: String)] {
+        var result: [(id: Int64, name: String)] = []
         do {
             if let db = db {
                 for template in try db.prepare(templates) {
+                    let id = template[templateID]
                     let name = template[templateName]
-                    result.append(name)
+                    result.append((id: id, name: name))
                 }
             }
         } catch {
@@ -48,11 +49,15 @@ class TemplateManager {
     func updateTemplate(id: Int64, newName: String) -> Bool {
         do {
             let template = templates.filter(templateID == id)
-            if try db?.run(template.update(templateName <- newName)) ?? 0 > 0 {
+            let updatedRows = try db?.run(template.update(templateName <- newName)) ?? 0
+            if updatedRows > 0 {
+                print("Template \(id) updated successfully.")
                 return true
+            } else {
+                print("Template \(id) not found or no changes made.")
             }
         } catch {
-            print("Error updating template: \(error)")
+            print("Error updating template \(id): \(error)")
         }
         return false
     }
