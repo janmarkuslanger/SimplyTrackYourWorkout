@@ -29,6 +29,20 @@ class TemplateManager {
             return nil
         }
     }
+    
+    func getTemplateName(by id: Int64?) -> String? {
+        guard let id = id else { return nil }
+        do {
+            let query = templates.filter(templateID == id)
+            if let template = try db?.pluck(query) {
+                return template[templateName]
+            }
+        } catch {
+            print("Error getting template name: \(error)")
+        }
+        return nil
+    }
+
 
     func readTemplates() -> [(id: Int64, name: String)] {
         var result: [(id: Int64, name: String)] = []

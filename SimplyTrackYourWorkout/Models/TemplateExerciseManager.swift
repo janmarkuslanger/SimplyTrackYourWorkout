@@ -96,6 +96,19 @@ class TemplateExerciseManager {
         }
         return false
     }
+    
+    func getExerciseName(by id: Int64) -> String? {
+        do {
+            let query = templateExercises.filter(templateExerciseID == id)
+            if let exercise = try db?.pluck(query) {
+                return exercise[templateExerciseName]
+            }
+        } catch {
+            print("Error fetching exercise name: \(error)")
+        }
+        return nil
+    }
+
 }
 
 

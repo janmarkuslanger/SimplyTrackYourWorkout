@@ -1,3 +1,12 @@
+//
+//  DateHelper.swift
+//  SimplyTrackYourWorkout
+//
+//  Created by Jan-Markus Langer on 21.01.25.
+//
+
+import Foundation
+
 class DateHelper {
     static let shared = DateHelper()
 
@@ -5,7 +14,7 @@ class DateHelper {
 
     private init() {
         formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd" // Format für das Datum
+        formatter.dateFormat = "yyyy-MM-dd"
     }
 
     func string(from date: Date) -> String {

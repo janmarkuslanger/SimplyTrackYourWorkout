@@ -44,7 +44,7 @@
 			path = SimplyTrackYourWorkoutUITests;
 			sourceTree = "<group>";
 		};
-		63FD26EA2D3FD8A700BA12DB /* SimplyTrackYourWorkout */ = {
+		63FD27382D4002C400BA12DB /* SimplyTrackYourWorkout */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SimplyTrackYourWorkout;
 			sourceTree = "<group>";
@@ -83,7 +83,7 @@
 				63FD26782D3EBE9D00BA12DB /* SimplyTrackYourWorkoutTests */,
 				63FD26822D3EBE9D00BA12DB /* SimplyTrackYourWorkoutUITests */,
 				63FD26662D3EBE9C00BA12DB /* Products */,
-				63FD26EA2D3FD8A700BA12DB /* SimplyTrackYourWorkout */,
+				63FD27382D4002C400BA12DB /* SimplyTrackYourWorkout */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +113,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				63FD26EA2D3FD8A700BA12DB /* SimplyTrackYourWorkout */,
+				63FD27382D4002C400BA12DB /* SimplyTrackYourWorkout */,
 			);
 			name = SimplyTrackYourWorkout;
 			packageProductDependencies = (

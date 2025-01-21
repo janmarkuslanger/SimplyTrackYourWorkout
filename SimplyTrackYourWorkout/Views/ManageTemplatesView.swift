@@ -1,36 +1,32 @@
-//
-//  ManageTemplatesView.swift
-//  SimplyTrackYourWorkout
-//
-//  Created by Jan-Markus Langer on 21.01.25.
-//
 import SwiftUI
 
 struct ManageTemplatesView: View {
     @State private var templates: [(id: Int64, name: String)] = []
     @State private var newTemplateName: String = ""
-    @State private var showingEditView: Bool = false
-    @State private var selectedTemplate: (id: Int64, name: String)? = nil
 
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     ForEach(templates, id: \.id) { template in
-                        HStack {
-                            Text(template.name)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .contentShape(Rectangle())
-                                .onTapGesture {}
-
-                            Button(action: {
-                                selectedTemplate = template
-                                showingEditView = true
-                            }) {
+                        NavigationLink(
+                            destination: EditTemplateView(
+                                templateID: template.id,
+                                currentName: template.name,
+                                onSave: {
+                                    loadTemplates()
+                                },
+                                onDelete: {
+                                    loadTemplates()
+                                }
+                            )
+                        ) {
+                            HStack {
+                                Text(template.name)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 Text("Edit")
                                     .foregroundColor(.blue)
                             }
-
                         }
                     }
                 }
@@ -52,22 +48,6 @@ struct ManageTemplatesView: View {
             }
             .navigationTitle("Manage Templates")
             .onAppear(perform: loadTemplates)
-            .sheet(isPresented: $showingEditView) {
-                if let selectedTemplate = selectedTemplate {
-                    EditTemplateView(
-                        templateID: selectedTemplate.id,
-                        currentName: selectedTemplate.name,
-                        onSave: {
-                            loadTemplates()
-                            showingEditView = false
-                        },
-                        onDelete: {
-                            loadTemplates()
-                            showingEditView = false
-                        }
-                    )
-                }
-            }
         }
     }
 

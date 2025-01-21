@@ -16,6 +16,7 @@ class DatabaseManager {
     private let templateExercises = Table("template_exercises")
     private let workouts = Table("workouts")
     private let workoutExercises = Table("workout_exercises")
+    private let workoutSets = Table("workout_sets")
 
     private let templateID = SQLite.Expression<Int64>("id");
     private let templateName = SQLite.Expression<String>("name")
@@ -32,10 +33,14 @@ class DatabaseManager {
 
     private let workoutExerciseID = SQLite.Expression<Int64>("id")
     private let workoutExerciseWorkoutID = SQLite.Expression<Int64>("workout_id")
-    private let workoutExerciseName = SQLite.Expression<String>("name")
-    private let workoutExerciseSets = SQLite.Expression<Int>("sets")
-    private let workoutExerciseReps = SQLite.Expression<Int>("reps")
-    private let workoutExerciseWeight = SQLite.Expression<Int>("weight")
+    private let workoutExerciseTemplateExerciseID = SQLite.Expression<Int64>("template_exercise_id")
+    
+    
+    private let workoutSetID = SQLite.Expression<Int64>("id")
+    private let workoutSetExerciseID = SQLite.Expression<Int64>("exercise_id")
+    private let workoutSetReps = SQLite.Expression<Int>("reps")
+    private let workoutSetWeight = SQLite.Expression<Int>("weight")
+
 
     private init() {
         do {
@@ -76,11 +81,15 @@ class DatabaseManager {
         try db?.run(workoutExercises.create(ifNotExists: true) { t in
             t.column(workoutExerciseID, primaryKey: true)
             t.column(workoutExerciseWorkoutID)
-            t.column(workoutExerciseName)
-            t.column(workoutExerciseSets)
-            t.column(workoutExerciseReps)
-            t.column(workoutExerciseWeight)
+            t.column(workoutExerciseTemplateExerciseID)
         })
+        
+        try db?.run(workoutSets.create(ifNotExists: true) { t in
+                t.column(workoutSetID, primaryKey: true)
+                t.column(workoutSetExerciseID)
+                t.column(workoutSetReps)
+                t.column(workoutSetWeight)
+            })
     }
 
     func getConnection() -> Connection? {

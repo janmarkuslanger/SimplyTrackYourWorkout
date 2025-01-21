@@ -42,7 +42,7 @@ class WorkoutManager {
                     let id = workout[workoutID]
                     let date = workout[workoutDate]
                     let templateID = workout[workoutTemplateID]
-                    result.append((id, date, templateID))
+                    result.append((id: id, date: date, templateID: templateID))
                 }
             }
         } catch {
@@ -50,6 +50,8 @@ class WorkoutManager {
         }
         return result
     }
+
+
 
     func updateWorkout(id: Int64, newDate: String, newTemplateID: Int64?) -> Bool {
         do {
