@@ -4,6 +4,7 @@
 //
 //  Created by Jan-Markus Langer on 21.01.25.
 //
+
 import SwiftUI
 
 struct EditTemplateExercisesView: View {
@@ -22,14 +23,15 @@ struct EditTemplateExercisesView: View {
                         Button(action: {
                             deleteExercise(exercise.id)
                         }) {
-                            Text("Delete")
+                            Image(systemName: "trash")
                                 .foregroundColor(.red)
                         }
+                        .buttonStyle(BorderlessButtonStyle())
                     }
                 }
                 .onMove(perform: moveExercise)
             }
-            .toolbar{
+            .toolbar {
                 EditButton()
             }
 
@@ -58,6 +60,9 @@ struct EditTemplateExercisesView: View {
         }
         .navigationTitle("Edit Exercises")
         .onAppear(perform: loadExercises)
+        .simultaneousGesture(TapGesture().onEnded {
+            hideKeyboard()
+        })
     }
 
     private func loadExercises() {
@@ -86,6 +91,7 @@ struct EditTemplateExercisesView: View {
 
     private func deleteExercise(_ id: Int64) {
         if TemplateExerciseManager.shared.deleteTemplateExercise(id: id) {
+            print("Exercise \(id) deleted")
             loadExercises()
         } else {
             print("Failed to delete exercise")
@@ -107,5 +113,4 @@ struct EditTemplateExercisesView: View {
             return updatedExercise
         }
     }
-
 }

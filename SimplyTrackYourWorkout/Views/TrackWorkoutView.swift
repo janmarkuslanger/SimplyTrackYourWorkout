@@ -28,6 +28,7 @@ struct TrackWorkoutView: View {
                                         Image(systemName: "trash")
                                             .foregroundColor(.red)
                                     }
+                                    .buttonStyle(BorderlessButtonStyle())
                                 }
                                 HStack {
                                     VStack(alignment: .leading) {
@@ -69,6 +70,9 @@ struct TrackWorkoutView: View {
                     }
                 }
             }
+            .simultaneousGesture(TapGesture().onEnded {
+                    hideKeyboard()
+                })
 
             Button(action: saveWorkout) {
                 Text("Save Workout")

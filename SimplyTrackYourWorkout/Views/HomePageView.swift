@@ -15,25 +15,26 @@ struct HomePageView: View {
                 }
                 .onAppear(perform: loadTemplates)
 
-                NavigationLink(destination: ManageTemplatesView()) {
-                    Text("Manage Templates")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                        .padding()
-                }
+                VStack(spacing: 12) {
+                    NavigationLink(destination: ManageTemplatesView()) {
+                        Text("Manage Templates")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    
+                    NavigationLink(destination: ManageWorkoutsView()) {
+                        Text("Workout history")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                }.padding()
                 
-                NavigationLink(destination: ManageWorkoutsView()) {
-                    Text("Workout history")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                        .padding()
-                }
             }
             .navigationTitle("Track Workout")
         }

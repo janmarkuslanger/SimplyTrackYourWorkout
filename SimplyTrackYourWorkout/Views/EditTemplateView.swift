@@ -27,29 +27,33 @@ struct EditTemplateView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
 
-                NavigationLink(destination: EditTemplateExercisesView(templateID: templateID)) {
-                    Text("Edit Exercises")
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
-                }
-                .padding()
+                VStack(spacing: 12) {
+                    NavigationLink(destination: EditTemplateExercisesView(templateID: templateID)) {
+                        Text("Edit Exercises")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
 
-                Button(action: saveTemplate) {
-                    Text("Save")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
-                .padding()
+                    Button(action: saveTemplate) {
+                        Text("Save")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
 
-                Button(action: deleteTemplate) {
-                    Text("Delete")
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+                    Button(action: deleteTemplate) {
+                        Text("Delete")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
                 }
 
                 Spacer()
