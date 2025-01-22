@@ -15,7 +15,10 @@ struct ManageWorkoutsView: View {
                 NavigationLink(
                     destination: WorkoutDetailView(
                         workoutID: workout.id,
-                        workoutDate: workout.date
+                        workoutDate: workout.date,
+                        onDelete: {
+                            loadWorkouts()
+                        }
                     )
                 ) {
                     HStack {

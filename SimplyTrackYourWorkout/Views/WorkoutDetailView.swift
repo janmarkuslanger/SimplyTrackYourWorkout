@@ -11,6 +11,8 @@ import SwiftUI
 struct WorkoutDetailView: View {
     let workoutID: Int64
     let workoutDate: String
+    let onDelete: () -> Void
+    
     @State private var exercises: [(name: String, sets: [(reps: Int, weight: Int)])] = []
 
     var body: some View {
@@ -34,9 +36,32 @@ struct WorkoutDetailView: View {
                     }
                 }
             }
+            .padding()
+            
+            Button(action: deleteWorkout) {
+                Text("Delete")
+                    .padding()
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+            }
+            .padding()
+            
         }
         .navigationTitle("Workout Details")
         .onAppear(perform: loadWorkoutDetails)
+    }
+    
+    private func deleteWorkout() {
+        let exercises = WorkoutExerciseManager.shared.getWorkoutExercises(workoutID: workoutID)
+        
+        for exercise in exercises {
+            WorkoutExerciseManager.shared.deleteWorkoutExercise(id: exercise.id)
+        }
+        
+        if WorkoutManager.shared.deleteWorkout(id: workoutID) {
+            onDelete()
+        }
     }
 
     private func loadWorkoutDetails() {

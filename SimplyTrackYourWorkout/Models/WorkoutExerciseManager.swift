@@ -35,6 +35,19 @@ class WorkoutExerciseManager {
         }
     }
     
+    func deleteWorkoutExercise(id: Int64) -> Bool {
+        do {
+            let exercise = workoutExercises.filter(workoutExerciseID == id)
+            if try db?.run(exercise.delete()) ?? 0 > 0 {
+                return true
+            }
+        } catch {
+            print("Error deleting workout exercise: \(error)")
+        }
+        
+        return false
+    }
+    
     func getWorkoutExercises(workoutID: Int64) -> [(id: Int64, name: String)] {
         var exercises: [(id: Int64, name: String)] = []
         do {
