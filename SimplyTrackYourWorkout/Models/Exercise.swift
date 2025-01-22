@@ -13,99 +13,156 @@ struct Exercise {
     let focus: String
 }
 
+
 struct ExerciseConstants {
-    static let exercises: [Exercise] = [
-        Exercise(name: "Benchpress", focus: "Chest"),
-        Exercise(name: "Deadlift", focus: "Back"),
-        Exercise(name: "Squats", focus: "Legs"),
-        Exercise(name: "Pull-ups", focus: "Back"),
-        Exercise(name: "Push-ups", focus: "Chest"),
-        Exercise(name: "Overhead Press", focus: "Shoulders"),
-        Exercise(name: "Barbell Row", focus: "Back"),
-        Exercise(name: "Lunges", focus: "Legs"),
-        Exercise(name: "Bicep Curl", focus: "Arms"),
-        Exercise(name: "Tricep Extension", focus: "Arms"),
-        Exercise(name: "Dumbbell Fly", focus: "Chest"),
-        Exercise(name: "Incline Benchpress", focus: "Upper Chest"),
-        Exercise(name: "Cable Crossover", focus: "Chest"),
-        Exercise(name: "Lat Pulldown", focus: "Back"),
-        Exercise(name: "Seated Row", focus: "Back"),
-        Exercise(name: "Face Pull", focus: "Shoulders"),
+    static let exercises = [
+        // A
         Exercise(name: "Arnold Press", focus: "Shoulders"),
-        Exercise(name: "Front Raise", focus: "Shoulders"),
-        Exercise(name: "Side Lateral Raise", focus: "Shoulders"),
-        Exercise(name: "Reverse Fly", focus: "Shoulders"),
-        Exercise(name: "Dumbbell Shrug", focus: "Traps"),
-        Exercise(name: "Cable Row", focus: "Back"),
-        Exercise(name: "Leg Press", focus: "Legs"),
-        Exercise(name: "Calf Raise", focus: "Calves"),
-        Exercise(name: "Hamstring Curl", focus: "Legs"),
-        Exercise(name: "Leg Extension", focus: "Legs"),
+        Exercise(name: "Assisted Pull-Up", focus: "Back"),
+        Exercise(name: "Atlas Stone Lift", focus: "Full Body"),
+        
+        // B
+        Exercise(name: "Back Squat", focus: "Legs"),
+        Exercise(name: "Barbell Bench Press", focus: "Chest"),
+        Exercise(name: "Barbell Curl", focus: "Biceps"),
+        Exercise(name: "Barbell Deadlift", focus: "Back"),
+        Exercise(name: "Barbell Front Squat", focus: "Legs"),
+        Exercise(name: "Barbell Overhead Press", focus: "Shoulders"),
+        Exercise(name: "Bench Press (Dumbbell)", focus: "Chest"),
+        Exercise(name: "Bent-Over Row", focus: "Back"),
+        Exercise(name: "Bodyweight Squat", focus: "Legs"),
         Exercise(name: "Bulgarian Split Squat", focus: "Legs"),
-        Exercise(name: "Step-Up", focus: "Legs"),
-        Exercise(name: "Plank", focus: "Core"),
-        Exercise(name: "Crunches", focus: "Core"),
-        Exercise(name: "Hanging Leg Raise", focus: "Core"),
-        Exercise(name: "Russian Twists", focus: "Core"),
-        Exercise(name: "Bicycle Crunch", focus: "Core"),
-        Exercise(name: "Mountain Climbers", focus: "Core"),
-        Exercise(name: "Woodchopper", focus: "Core"),
-        Exercise(name: "Ab Wheel Rollout", focus: "Core"),
-        Exercise(name: "Pec Deck", focus: "Chest"),
-        Exercise(name: "Close-Grip Benchpress", focus: "Triceps"),
-        Exercise(name: "Skull Crushers", focus: "Triceps"),
-        Exercise(name: "Dips", focus: "Triceps"),
-        Exercise(name: "Hammer Curl", focus: "Arms"),
-        Exercise(name: "Concentration Curl", focus: "Arms"),
-        Exercise(name: "Preacher Curl", focus: "Arms"),
-        Exercise(name: "Reverse Curl", focus: "Arms"),
-        Exercise(name: "Zottman Curl", focus: "Arms"),
-        Exercise(name: "Farmer's Walk", focus: "Grip"),
+        Exercise(name: "Butterfly Machine", focus: "Chest"),
+        
+        // C
+        Exercise(name: "Cable Crossover", focus: "Chest"),
         Exercise(name: "Cable Lateral Raise", focus: "Shoulders"),
-        Exercise(name: "Incline Dumbbell Fly", focus: "Chest"),
-        Exercise(name: "Serratus Crunch", focus: "Core"),
-        Exercise(name: "Donkey Calf Raise", focus: "Calves"),
-        Exercise(name: "Glute Bridge", focus: "Glutes"),
-        Exercise(name: "Hip Thrust", focus: "Glutes"),
-        Exercise(name: "Good Morning", focus: "Lower Back"),
-        Exercise(name: "Romanian Deadlift", focus: "Hamstrings"),
-        Exercise(name: "Sumo Deadlift", focus: "Back"),
-        Exercise(name: "Trap Bar Deadlift", focus: "Back"),
-        Exercise(name: "Cable Kickback", focus: "Glutes"),
-        Exercise(name: "Hyperextension", focus: "Lower Back"),
-        Exercise(name: "Reverse Hyperextension", focus: "Lower Back"),
-        Exercise(name: "Hack Squat", focus: "Legs"),
-        Exercise(name: "Jefferson Squat", focus: "Legs"),
-        Exercise(name: "Barbell Hip Thrust", focus: "Glutes"),
-        Exercise(name: "Standing Calf Raise", focus: "Calves"),
-        Exercise(name: "Sissy Squat", focus: "Quads"),
-        Exercise(name: "Pendlay Row", focus: "Back"),
-        Exercise(name: "Meadows Row", focus: "Back"),
-        Exercise(name: "Chest-Supported Row", focus: "Back"),
-        Exercise(name: "Single-Arm Row", focus: "Back"),
-        Exercise(name: "Snatch", focus: "Full Body"),
+        Exercise(name: "Cable Row", focus: "Back"),
+        Exercise(name: "Calf Raise (Seated)", focus: "Calves"),
+        Exercise(name: "Calf Raise (Standing)", focus: "Calves"),
+        Exercise(name: "Chest Fly (Machine)", focus: "Chest"),
+        Exercise(name: "Chin-Up", focus: "Back"),
         Exercise(name: "Clean and Jerk", focus: "Full Body"),
-        Exercise(name: "Kettlebell Swing", focus: "Glutes"),
-        Exercise(name: "Kettlebell Snatch", focus: "Full Body"),
-        Exercise(name: "Overhead Squat", focus: "Legs"),
-        Exercise(name: "Zercher Squat", focus: "Legs"),
-        Exercise(name: "Cable Crunch", focus: "Core"),
-        Exercise(name: "Suitcase Carry", focus: "Core"),
-        Exercise(name: "Reverse Grip Pulldown", focus: "Back"),
-        Exercise(name: "Incline Dumbbell Press", focus: "Chest"),
-        Exercise(name: "Cable Tricep Pushdown", focus: "Triceps"),
-        Exercise(name: "Smith Machine Squat", focus: "Legs"),
-        Exercise(name: "Smith Machine Benchpress", focus: "Chest"),
-        Exercise(name: "Seated Calf Raise", focus: "Calves"),
-        Exercise(name: "Incline Push-Up", focus: "Chest"),
+        Exercise(name: "Close-Grip Bench Press", focus: "Triceps"),
+        Exercise(name: "Concentration Curl", focus: "Biceps"),
+        Exercise(name: "Conventional Deadlift", focus: "Back"),
+        Exercise(name: "Crunches", focus: "Abs"),
+        
+        // D
+        Exercise(name: "Deadlift (Romanian)", focus: "Hamstrings"),
+        Exercise(name: "Deadlift (Sumo)", focus: "Legs"),
+        Exercise(name: "Decline Bench Press", focus: "Chest"),
         Exercise(name: "Decline Push-Up", focus: "Chest"),
-        Exercise(name: "Weighted Pull-Up", focus: "Back"),
-        Exercise(name: "Weighted Dip", focus: "Triceps"),
-        Exercise(name: "Battle Ropes", focus: "Full Body"),
-        Exercise(name: "Medicine Ball Slam", focus: "Core"),
-        Exercise(name: "Dragon Flag", focus: "Core"),
+        Exercise(name: "Dumbbell Curl", focus: "Biceps"),
+        Exercise(name: "Dumbbell Deadlift", focus: "Legs"),
+        Exercise(name: "Dumbbell Front Raise", focus: "Shoulders"),
+        Exercise(name: "Dumbbell Lateral Raise", focus: "Shoulders"),
+        
+        // E
+        Exercise(name: "EZ-Bar Curl", focus: "Biceps"),
+        Exercise(name: "Exercise Ball Crunch", focus: "Abs"),
+        Exercise(name: "External Rotation (Cable or Dumbbell)", focus: "Shoulders"),
+        
+        // F
+        Exercise(name: "Face Pull (Cable)", focus: "Shoulders"),
+        Exercise(name: "Farmer's Walk", focus: "Full Body"),
+        Exercise(name: "Flat Bench Press", focus: "Chest"),
+        Exercise(name: "Flat Dumbbell Press", focus: "Chest"),
         Exercise(name: "Front Squat", focus: "Legs"),
-        Exercise(name: "Chest Dip", focus: "Chest"),
-        Exercise(name: "Handstand Push-Up", focus: "Shoulders")
+        Exercise(name: "Front Raise (Dumbbell)", focus: "Shoulders"),
+        
+        // G
+        Exercise(name: "Goblet Squat", focus: "Legs"),
+        Exercise(name: "Good Morning (Barbell)", focus: "Hamstrings"),
+        Exercise(name: "Glute Bridge", focus: "Glutes"),
+        Exercise(name: "Glute Kickback (Cable or Machine)", focus: "Glutes"),
+        
+        // H
+        Exercise(name: "Hammer Curl (Dumbbell)", focus: "Biceps"),
+        Exercise(name: "Hanging Leg Raise", focus: "Abs"),
+        Exercise(name: "Hip Abduction (Machine)", focus: "Glutes"),
+        Exercise(name: "Hip Thrust", focus: "Glutes"),
+        Exercise(name: "Hack Squat (Machine)", focus: "Legs"),
+        
+        // I
+        Exercise(name: "Incline Bench Press (Barbell)", focus: "Chest"),
+        Exercise(name: "Incline Bench Press (Dumbbell)", focus: "Chest"),
+        Exercise(name: "Incline Dumbbell Fly", focus: "Chest"),
+        Exercise(name: "Incline Push-Up", focus: "Chest"),
+        
+        // K
+        Exercise(name: "Kettlebell Swing", focus: "Full Body"),
+        Exercise(name: "Kettlebell Goblet Squat", focus: "Legs"),
+        Exercise(name: "Kettlebell Clean and Press", focus: "Full Body"),
+        Exercise(name: "Kneeling Cable Crunch", focus: "Abs"),
+        
+        // L
+        Exercise(name: "Lat Pulldown", focus: "Back"),
+        Exercise(name: "Lateral Raise (Dumbbell or Cable)", focus: "Shoulders"),
+        Exercise(name: "Leg Curl (Seated)", focus: "Hamstrings"),
+        Exercise(name: "Leg Curl (Lying)", focus: "Hamstrings"),
+        Exercise(name: "Leg Extension (Machine)", focus: "Quads"),
+        Exercise(name: "Leg Press (Machine)", focus: "Legs"),
+        Exercise(name: "Lunges (Walking)", focus: "Legs"),
+        Exercise(name: "Lunges (Static)", focus: "Legs"),
+        
+        // M
+        Exercise(name: "Machine Chest Press", focus: "Chest"),
+        Exercise(name: "Machine Shoulder Press", focus: "Shoulders"),
+        Exercise(name: "Mountain Climbers", focus: "Full Body"),
+        
+        // O
+        Exercise(name: "Overhead Press (Barbell)", focus: "Shoulders"),
+        Exercise(name: "Overhead Press (Dumbbell)", focus: "Shoulders"),
+        Exercise(name: "Overhead Triceps Extension", focus: "Triceps"),
+        
+        // P
+        Exercise(name: "Pistol Squat", focus: "Legs"),
+        Exercise(name: "Plank", focus: "Abs"),
+        Exercise(name: "Preacher Curl", focus: "Biceps"),
+        Exercise(name: "Pull-Up", focus: "Back"),
+        Exercise(name: "Push-Up", focus: "Chest"),
+        Exercise(name: "Push Press", focus: "Shoulders"),
+        
+        // R
+        Exercise(name: "Rear Delt Fly (Dumbbell)", focus: "Shoulders"),
+        Exercise(name: "Rear Delt Fly (Cable)", focus: "Shoulders"),
+        Exercise(name: "Romanian Deadlift", focus: "Hamstrings"),
+        Exercise(name: "Rope Pushdown (Triceps)", focus: "Triceps"),
+        Exercise(name: "Row (Seated Cable)", focus: "Back"),
+        Exercise(name: "Russian Twist", focus: "Abs"),
+        
+        // S
+        Exercise(name: "Side Plank", focus: "Abs"),
+        Exercise(name: "Sissy Squat", focus: "Quads"),
+        Exercise(name: "Skull Crusher", focus: "Triceps"),
+        Exercise(name: "Sled Push", focus: "Legs"),
+        Exercise(name: "Smith Machine Bench Press", focus: "Chest"),
+        Exercise(name: "Smith Machine Squat", focus: "Legs"),
+        Exercise(name: "Split Squat", focus: "Legs"),
+        Exercise(name: "Step-Ups", focus: "Legs"),
+        
+        // T
+        Exercise(name: "T-Bar Row", focus: "Back"),
+        Exercise(name: "Triceps Dip", focus: "Triceps"),
+        Exercise(name: "Triceps Extension (Cable or Dumbbell)", focus: "Triceps"),
+        
+        // U
+        Exercise(name: "Upright Row (Barbell)", focus: "Shoulders"),
+        Exercise(name: "Upright Row (Dumbbell)", focus: "Shoulders"),
+        
+        // V
+        Exercise(name: "Vertical Leg Raise", focus: "Abs"),
+        Exercise(name: "V-Up", focus: "Abs"),
+        
+        // W
+        Exercise(name: "Wall Sit", focus: "Legs"),
+        Exercise(name: "Weighted Pull-Up", focus: "Back"),
+        Exercise(name: "Weighted Push-Up", focus: "Chest"),
+        Exercise(name: "Wide-Grip Pull-Up", focus: "Back"),
+        
+        // Y
+        Exercise(name: "Y-Raise (Dumbbell or Cable)", focus: "Shoulders")
     ]
 }
+
