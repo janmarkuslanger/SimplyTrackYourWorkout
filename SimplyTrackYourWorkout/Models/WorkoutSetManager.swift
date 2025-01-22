@@ -33,26 +33,23 @@ class WorkoutSetManager {
         }
     }
     
-    func getLastWorkoutSet(exerciseID: Int64) -> [(reps: Int, weight: Int)] {
+    func getLastWorkoutSetsForExercise(exerciseID: Int64) -> [(reps: Int, weight: Int)] {
         var lastSets: [(reps: Int, weight: Int)] = []
         do {
             let query = workoutSets
                 .filter(workoutSetExerciseID == exerciseID)
-                .order(workoutSetID.desc)
-                .limit(1)
-            
+                .order(workoutSetID.asc)
+
             if let db = db {
                 for set in try db.prepare(query) {
                     lastSets.append((reps: set[workoutSetReps], weight: set[workoutSetWeight]))
                 }
             }
-            
         } catch {
-            print("Error fetching last workout set: \(error)")
+            print("Error fetching last workout sets: \(error)")
         }
         return lastSets
     }
-
     
     func readWorkoutSets(exerciseID: Int64) -> [(reps: Int, weight: Int)] {
         var sets: [(reps: Int, weight: Int)] = []

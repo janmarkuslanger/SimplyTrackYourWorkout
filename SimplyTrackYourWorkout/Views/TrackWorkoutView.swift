@@ -15,16 +15,23 @@ struct TrackWorkoutView: View {
             List {
                 ForEach(0..<exercises.count, id: \.self) { exerciseIndex in
                     let lastSetValues = loadLastWorkoutValues(for: exercises[exerciseIndex].id)
+                    
                     Section(header: Text(exercises[exerciseIndex].name)) {
                         ForEach(0..<exercises[exerciseIndex].sets.count, id: \.self) { setIndex in
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text("Set \(setIndex + 1)")
                                     Spacer()
+                                    Button(action: {
+                                        deleteSet(at: setIndex, for: exerciseIndex)
+                                    }) {
+                                        Image(systemName: "trash")
+                                            .foregroundColor(.red)
+                                    }
                                 }
                                 HStack {
                                     VStack(alignment: .leading) {
-                                        Text("Reps (Last: \(lastSetValues.reps))")
+                                        Text("Reps (Last: \(setIndex < lastSetValues.count ? lastSetValues[setIndex].reps : 0))")
                                             .font(.caption)
                                             .foregroundColor(.gray)
                                         TextField("Enter reps", value: Binding(
@@ -39,7 +46,7 @@ struct TrackWorkoutView: View {
                                     Spacer()
 
                                     VStack(alignment: .leading) {
-                                        Text("Weight (Last: \(lastSetValues.weight) kg)")
+                                        Text("Weight (Last: \(setIndex < lastSetValues.count ? lastSetValues[setIndex].weight : 0) kg)")
                                             .font(.caption)
                                             .foregroundColor(.gray)
                                         TextField("Enter weight", value: Binding(
@@ -79,9 +86,8 @@ struct TrackWorkoutView: View {
         .onAppear(perform: loadExercises)
     }
     
-    private func loadLastWorkoutValues(for exerciseID: Int64) -> (reps: Int, weight: Int) {
-        let lastSets = WorkoutSetManager.shared.getLastWorkoutSet(exerciseID: exerciseID)
-        return lastSets.first ?? (reps: 0, weight: 0)
+    private func loadLastWorkoutValues(for exerciseID: Int64) -> [(reps: Int, weight: Int)] {
+        return WorkoutSetManager.shared.getLastWorkoutSetsForExercise(exerciseID: exerciseID)
     }
 
 
@@ -90,6 +96,13 @@ struct TrackWorkoutView: View {
             (id: exercise.id, name: exercise.name, sets: Array(repeating: (reps: 0, weight: 0), count: exercise.sets))
         }
     }
+    
+    private func deleteSet(at setIndex: Int, for exerciseIndex: Int) {
+        guard exercises[exerciseIndex].sets.indices.contains(setIndex) else { return }
+        exercises[exerciseIndex].sets.remove(at: setIndex)
+        print("Set \(setIndex + 1) deleted for exercise \(exercises[exerciseIndex].name)")
+    }
+
 
     private func addSet(to exerciseIndex: Int) {
         exercises[exerciseIndex].sets.append((reps: 0, weight: 0))
