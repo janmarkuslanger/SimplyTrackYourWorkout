@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "App_Store_1024x1024 2.png",
+      "filename" : "App_Store_1024x1024.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "App_Store_1024x1024 3.png",
+      "filename" : "App_Store_1024x1024 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,7 +25,7 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "App_Store_1024x1024 1.png",
+      "filename" : "App_Store_1024x1024 2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -67,13 +67,13 @@
       "size" : "40x40"
     },
     {
-      "filename" : "Spotlight_Icon_@3x_120x120.png",
+      "filename" : "iPhone_Retina_120x120.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "Spotlight_Icon_@3x_120x120 1.png",
+      "filename" : "Spotlight_Icon_@3x_120x120.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
@@ -85,7 +85,7 @@
       "size" : "60x60"
     },
     {
-      "filename" : "App_Store_1024x1024.png",
+      "filename" : "App_Store_1024x1024 3.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
