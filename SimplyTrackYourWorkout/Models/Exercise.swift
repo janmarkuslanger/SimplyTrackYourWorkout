@@ -68,7 +68,6 @@ struct ExerciseConstants {
         Exercise(name: "Leg Raise (Vertical)", focus: "Abs"),
         Exercise(name: "Legcurls (Lying)", focus: "Legs"),
         Exercise(name: "Legcurl (Seated)", focus: "Legs"),
-        Exercise(name: "Legcurl (Seated)", focus: "Legs"),
         Exercise(name: "Lunges (Barbell)", focus: "Legs"),
         Exercise(name: "Lunges (Dumbbell)", focus: "Legs"),
         
