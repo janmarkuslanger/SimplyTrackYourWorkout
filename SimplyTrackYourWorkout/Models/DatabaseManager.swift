@@ -23,7 +23,7 @@ class DatabaseManager {
 
     private let templateExerciseID = SQLite.Expression<Int64>("id")
     private let templateExerciseTemplateID = SQLite.Expression<Int64>("template_id")
-    private let templateExerciseName = SQLite.Expression<String>("name")
+    private let templateExerciseExerciseID = SQLite.Expression<Int64>("exercise_id")
     private let templateExerciseSets = SQLite.Expression<Int>("sets")
     private let templateExerciseSortIndex = SQLite.Expression<Int>("sort_index")
 
@@ -67,7 +67,7 @@ class DatabaseManager {
         try db?.run(templateExercises.create(ifNotExists: true) { t in
             t.column(templateExerciseID, primaryKey: true)
             t.column(templateExerciseTemplateID)
-            t.column(templateExerciseName)
+            t.column(templateExerciseExerciseID)
             t.column(templateExerciseSets)
             t.column(templateExerciseSortIndex, defaultValue: 0)
         })
@@ -85,11 +85,11 @@ class DatabaseManager {
         })
         
         try db?.run(workoutSets.create(ifNotExists: true) { t in
-                t.column(workoutSetID, primaryKey: true)
-                t.column(workoutSetExerciseID)
-                t.column(workoutSetReps)
-                t.column(workoutSetWeight)
-            })
+            t.column(workoutSetID, primaryKey: true)
+            t.column(workoutSetExerciseID)
+            t.column(workoutSetReps)
+            t.column(workoutSetWeight)
+        })
     }
 
     func getConnection() -> Connection? {

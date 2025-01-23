@@ -48,15 +48,19 @@ class WorkoutExerciseManager {
         return false
     }
     
-    func getWorkoutExercises(workoutID: Int64) -> [(id: Int64, name: String)] {
-        var exercises: [(id: Int64, name: String)] = []
+    func getWorkoutExercises(workoutID: Int64) -> [(id: Int64, exerciseID: Int64)] {
+        var exercises: [(id: Int64, exerciseID: Int64)] = []
         do {
             if let db = db {
                 let query = workoutExercises.filter(workoutExerciseWorkoutID == workoutID)
                 for exercise in try db.prepare(query) {
                     let id = exercise[workoutExerciseID]
-                    let name = TemplateExerciseManager.shared.getExerciseName(by: exercise[workoutExerciseTemplateExerciseID]) ?? "Unknown Exercise"
-                    exercises.append((id: id, name: name))
+
+                    if let exerciseID = TemplateExerciseManager.shared.getExerciseID(byTemplateExerciseID: exercise[workoutExerciseTemplateExerciseID]) {
+                        exercises.append((id: id, exerciseID: exerciseID))
+                    } else {
+                        print("Warning: No exerciseID found for templateExerciseID \(exercise[workoutExerciseTemplateExerciseID])")
+                    }
                 }
             }
         } catch {
@@ -64,6 +68,8 @@ class WorkoutExerciseManager {
         }
         return exercises
     }
+
+
 
 }
 

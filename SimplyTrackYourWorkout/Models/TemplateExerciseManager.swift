@@ -1,9 +1,3 @@
-//
-//  TemplateExerciseManager.swift
-//  SimplyTrackYourWorkout
-//
-//  Created by Jan-Markus Langer on 21.01.25.
-//
 import SQLite
 
 class TemplateExerciseManager {
@@ -14,7 +8,7 @@ class TemplateExerciseManager {
     private let templateExercises = Table("template_exercises")
     private let templateExerciseID = Expression<Int64>("id")
     private let templateExerciseTemplateID = Expression<Int64>("template_id")
-    private let templateExerciseName = Expression<String>("name")
+    private let templateExerciseExerciseID = Expression<Int64>("exercise_id")
     private let templateExerciseSets = Expression<Int>("sets")
     private let templateExerciseSortIndex = Expression<Int>("sort_index")
 
@@ -22,11 +16,11 @@ class TemplateExerciseManager {
         db = DatabaseManager.shared.getConnection()
     }
 
-    func createTemplateExercise(templateID: Int64, name: String, sets: Int, sortIndex: Int) -> Int64? {
+    func createTemplateExercise(templateID: Int64, exerciseID: Int64, sets: Int, sortIndex: Int) -> Int64? {
         do {
             let insert = templateExercises.insert(
                 templateExerciseTemplateID <- templateID,
-                templateExerciseName <- name,
+                templateExerciseExerciseID <- exerciseID,
                 templateExerciseSets <- sets,
                 templateExerciseSortIndex <- sortIndex
             )
@@ -38,17 +32,17 @@ class TemplateExerciseManager {
         }
     }
 
-    func readTemplateExercises(templateID: Int64) -> [(id: Int64, name: String, sets: Int, sortIndex: Int)] {
-        var exercises: [(id: Int64, name: String, sets: Int, sortIndex: Int)] = []
+    func readTemplateExercises(templateID: Int64) -> [(id: Int64, exerciseID: Int64, sets: Int, sortIndex: Int)] {
+        var exercises: [(id: Int64, exerciseID: Int64, sets: Int, sortIndex: Int)] = []
         do {
             if let db = db {
                 let query = templateExercises.filter(templateExerciseTemplateID == templateID)
                 for exercise in try db.prepare(query) {
                     let id = exercise[templateExerciseID]
-                    let name = exercise[templateExerciseName]
+                    let exerciseID = exercise[templateExerciseExerciseID]
                     let sets = exercise[templateExerciseSets]
                     let sortIndex = exercise[templateExerciseSortIndex]
-                    exercises.append((id: id, name: name, sets: sets, sortIndex: sortIndex))
+                    exercises.append((id: id, exerciseID: exerciseID, sets: sets, sortIndex: sortIndex))
                 }
             }
         } catch {
@@ -56,7 +50,7 @@ class TemplateExerciseManager {
         }
         return exercises
     }
-    
+
     func updateSortIndex(exerciseID: Int64, newSortIndex: Int) -> Bool {
         do {
             guard let db = db else {
@@ -70,20 +64,17 @@ class TemplateExerciseManager {
             if rowsUpdated > 0 {
                 return true
             }
-            
         } catch {
             print("Error updating sortIndex: \(error)")
         }
-        
         return false
     }
 
-
-    func updateTemplateExercise(id: Int64, newName: String, newSets: Int) -> Bool {
+    func updateTemplateExercise(id: Int64, newExerciseID: Int64, newSets: Int) -> Bool {
         do {
             let exercise = templateExercises.filter(templateExerciseID == id)
             if try db?.run(exercise.update(
-                templateExerciseName <- newName,
+                templateExerciseExerciseID <- newExerciseID,
                 templateExerciseSets <- newSets
             )) ?? 0 > 0 {
                 return true
@@ -106,18 +97,35 @@ class TemplateExerciseManager {
         return false
     }
     
-    func getExerciseName(by id: Int64) -> String? {
+    func getExerciseID(byTemplateExerciseID id: Int64) -> Int64?{
         do {
-            let query = templateExercises.filter(templateExerciseID == id)
-            if let exercise = try db?.pluck(query) {
-                return exercise[templateExerciseName]
+            if let db = db {
+                let query = templateExercises.filter(templateExerciseID == id)
+                if let exercise = try db.pluck(query) {
+                    return exercise[templateExerciseExerciseID]
+                }
             }
         } catch {
-            print("Error fetching exercise name: \(error)")
+            print("Error fetching exercise ID: \(error)")
         }
         return nil
     }
 
+    func getExerciseDetails(by exerciseID: Int64) -> Exercise? {
+        return ExerciseConstants.exercises[Int64(exerciseID)]
+    }
+    
+    func deleteTemplateExercises(byTemplateID templateID: Int64) -> Bool {
+        do {
+            if let db = db {
+                let query = templateExercises.filter(templateExerciseTemplateID == templateID)
+                try db.run(query.delete())
+                print("All template exercises for templateID \(templateID) have been deleted.")
+                return true
+            }
+        } catch {
+            print("Error deleting template exercises for templateID \(templateID): \(error)")
+        }
+        return false
+    }
 }
-
-

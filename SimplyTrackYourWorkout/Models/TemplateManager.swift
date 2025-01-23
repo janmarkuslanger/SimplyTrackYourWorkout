@@ -75,6 +75,7 @@ class TemplateManager {
         }
         return false
     }
+ 
 
     func deleteTemplate(id: Int64) -> Bool {
         do {
@@ -84,6 +85,26 @@ class TemplateManager {
             }
         } catch {
             print("Error deleting template: \(error)")
+        }
+        return false
+    }
+    
+    func deleteTemplateWithContent(id: Int64) -> Bool {
+        do {
+            let exercisesDeleted = TemplateExerciseManager.shared.deleteTemplateExercises(byTemplateID: id)
+            if !exercisesDeleted {
+                print("Error deleting template exercises for templateID \(id)")
+                return false
+            }
+
+            // Lösche das Template
+            let template = templates.filter(templateID == id)
+            if try db?.run(template.delete()) ?? 0 > 0 {
+                print("Template \(id) and its content deleted successfully.")
+                return true
+            }
+        } catch {
+            print("Error deleting template with content: \(error)")
         }
         return false
     }

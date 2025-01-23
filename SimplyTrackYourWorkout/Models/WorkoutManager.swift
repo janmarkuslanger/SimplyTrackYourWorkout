@@ -51,8 +51,6 @@ class WorkoutManager {
         return result
     }
 
-
-
     func updateWorkout(id: Int64, newDate: String, newTemplateID: Int64?) -> Bool {
         do {
             let workout = workouts.filter(workoutID == id)

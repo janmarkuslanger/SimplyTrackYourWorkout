@@ -12,6 +12,7 @@ struct EditTemplateView: View {
     @State private var templateName: String
     let onSave: () -> Void
     let onDelete: () -> Void
+    @State private var showDeleteConfirmation: Bool = false
 
     init(templateID: Int64, currentName: String, onSave: @escaping () -> Void, onDelete: @escaping () -> Void) {
         self.templateID = templateID
@@ -46,7 +47,9 @@ struct EditTemplateView: View {
                             .cornerRadius(8)
                     }
 
-                    Button(action: deleteTemplate) {
+                    Button(action: {
+                        showDeleteConfirmation = true
+                    }) {
                         Text("Delete")
                             .frame(maxWidth: .infinity)
                             .padding()
@@ -55,6 +58,15 @@ struct EditTemplateView: View {
                             .cornerRadius(8)
                     }
                 }
+                .alert(isPresented: $showDeleteConfirmation) {
+                    Alert(
+                        title: Text("Confirm Delete"),
+                        message: Text("Workoutlogs based on this template are getting deleted."),
+                        primaryButton: .default(Text("Delete"), action: deleteTemplate),
+                        secondaryButton: .cancel()
+                    )
+                }
+                
 
                 Spacer()
             }
@@ -73,7 +85,7 @@ struct EditTemplateView: View {
     }
 
     private func deleteTemplate() {
-        if TemplateManager.shared.deleteTemplate(id: templateID) {
+        if TemplateManager.shared.deleteTemplateWithContent(id: templateID) {
             onDelete()
         }
     }

@@ -3,7 +3,7 @@ import SwiftUI
 struct TrackWorkoutView: View {
     let templateID: Int64
     let templateName: String
-    @State private var exercises: [(id: Int64, name: String, sets: [(reps: Int, weight: Int)])] = []
+    @State private var exercises: [(id: Int64, exerciseID: Int64, sets: [(reps: Int, weight: Int)])] = []
     @State private var workoutDate: Date = Date()
     @State private var showSaveConfirmation: Bool = false
     @Environment(\.presentationMode) var presentationMode
@@ -14,11 +14,11 @@ struct TrackWorkoutView: View {
                 .padding()
 
             List {
-                ForEach(0..<exercises.count, id: \.self) { exerciseIndex in
-                    let lastSetValues = loadLastWorkoutValues(for: exercises[exerciseIndex].id)
-                    
-                    Section(header: Text(exercises[exerciseIndex].name)) {
-                        ForEach(0..<exercises[exerciseIndex].sets.count, id: \.self) { setIndex in
+                ForEach(0..<exercises.count, id: \..self) { exerciseIndex in
+                    let lastSetValues = loadLastWorkoutValues(for: exercises[exerciseIndex].exerciseID)
+
+                    Section(header: Text(getExerciseName(by: exercises[exerciseIndex].exerciseID))) {
+                        ForEach(0..<exercises[exerciseIndex].sets.count, id: \..self) { setIndex in
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text("Set \(setIndex + 1)")
@@ -72,8 +72,8 @@ struct TrackWorkoutView: View {
                 }
             }
             .simultaneousGesture(TapGesture().onEnded {
-                    hideKeyboard()
-                })
+                hideKeyboard()
+            })
 
             Button(action: {
                 showSaveConfirmation = true
@@ -100,24 +100,26 @@ struct TrackWorkoutView: View {
         .navigationTitle("Track Workout")
         .onAppear(perform: loadExercises)
     }
-    
+
+    private func getExerciseName(by exerciseID: Int64) -> String {
+        return ExerciseConstants.exercises[Int64(exerciseID)]?.name ?? "Unknown Exercise"
+    }
+
     private func loadLastWorkoutValues(for exerciseID: Int64) -> [(reps: Int, weight: Int)] {
         return WorkoutSetManager.shared.getLastWorkoutSetsForExercise(exerciseID: exerciseID)
     }
 
-
     private func loadExercises() {
         exercises = TemplateExerciseManager.shared.readTemplateExercises(templateID: templateID).map { exercise in
-            (id: exercise.id, name: exercise.name, sets: Array(repeating: (reps: 0, weight: 0), count: exercise.sets))
+            (id: exercise.id, exerciseID: exercise.exerciseID, sets: Array(repeating: (reps: 0, weight: 0), count: exercise.sets))
         }
     }
-    
+
     private func deleteSet(at setIndex: Int, for exerciseIndex: Int) {
         guard exercises[exerciseIndex].sets.indices.contains(setIndex) else { return }
         exercises[exerciseIndex].sets.remove(at: setIndex)
-        print("Set \(setIndex + 1) deleted for exercise \(exercises[exerciseIndex].name)")
+        print("Set \(setIndex + 1) deleted for exercise \(exercises[exerciseIndex].exerciseID)")
     }
-
 
     private func addSet(to exerciseIndex: Int) {
         exercises[exerciseIndex].sets.append((reps: 0, weight: 0))
@@ -130,26 +132,28 @@ struct TrackWorkoutView: View {
             print("Failed to create workout.")
             return
         }
+    
 
         for exercise in exercises {
-            guard let exerciseID = WorkoutExerciseManager.shared.addWorkoutExercise(
+            guard let workoutExerciseID = WorkoutExerciseManager.shared.addWorkoutExercise(
                 workoutID: workoutID,
                 templateExerciseID: exercise.id
             ) else {
-                print("Failed to add exercise \(exercise.name).")
+                print("Failed to add workout exercise with templateExerciseID: \(exercise.id)")
                 continue
             }
 
             for set in exercise.sets {
                 if WorkoutSetManager.shared.createWorkoutSet(
-                    exerciseID: exerciseID,
+                    exerciseID: workoutExerciseID,
                     reps: set.reps,
                     weight: set.weight
                 ) == nil {
-                    print("Failed to save set for exercise \(exercise.name).")
+                    print("Failed to save set for exerciseID: \(exercise.exerciseID)")
                 }
             }
         }
+
         print("Workout saved successfully.")
         presentationMode.wrappedValue.dismiss()
     }
