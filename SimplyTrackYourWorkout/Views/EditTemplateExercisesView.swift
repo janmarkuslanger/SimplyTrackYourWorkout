@@ -67,11 +67,12 @@ struct EditTemplateExercisesView: View {
 
     private func loadExercises() {
         exercises = TemplateExerciseManager.shared.readTemplateExercises(templateID: templateID)
+            .sorted(by: { $0.sortIndex < $1.sortIndex })
     }
+
 
     private func addExercise() {
         guard !selectedExercise.isEmpty, let setsValue = Int(sets), setsValue > 0 else {
-            print("Invalid input")
             return
         }
 
@@ -84,17 +85,12 @@ struct EditTemplateExercisesView: View {
         ) {
             sets = ""
             loadExercises()
-        } else {
-            print("Failed to add exercise")
         }
     }
 
     private func deleteExercise(_ id: Int64) {
         if TemplateExerciseManager.shared.deleteTemplateExercise(id: id) {
-            print("Exercise \(id) deleted")
             loadExercises()
-        } else {
-            print("Failed to delete exercise")
         }
     }
 
@@ -102,15 +98,14 @@ struct EditTemplateExercisesView: View {
         exercises.move(fromOffsets: source, toOffset: destination)
 
         for (index, exercise) in exercises.enumerated() {
-            if exercise.sortIndex != index {
-                TemplateExerciseManager.shared.updateSortIndex(exerciseID: exercise.id, newSortIndex: index)
+            if TemplateExerciseManager.shared.updateSortIndex(exerciseID: exercise.id, newSortIndex: index) {
+                exercises[index].sortIndex = index
             }
         }
-
-        exercises = exercises.enumerated().map { (index, exercise) in
-            var updatedExercise = exercise
-            updatedExercise.sortIndex = index
-            return updatedExercise
-        }
+        
+        loadExercises()
     }
+
+
+
 }

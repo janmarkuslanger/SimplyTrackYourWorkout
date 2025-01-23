@@ -59,13 +59,22 @@ class TemplateExerciseManager {
     
     func updateSortIndex(exerciseID: Int64, newSortIndex: Int) -> Bool {
         do {
+            guard let db = db else {
+                print("Database connection is nil")
+                return false
+            }
+
             let exercise = templateExercises.filter(templateExerciseID == exerciseID)
-            if try db?.run(exercise.update(templateExerciseSortIndex <- newSortIndex)) ?? 0 > 0 {
+            let rowsUpdated = try db.run(exercise.update(templateExerciseSortIndex <- newSortIndex))
+
+            if rowsUpdated > 0 {
                 return true
             }
+            
         } catch {
-            print("Error updating sort index for exercise \(exerciseID): \(error)")
+            print("Error updating sortIndex: \(error)")
         }
+        
         return false
     }
 
