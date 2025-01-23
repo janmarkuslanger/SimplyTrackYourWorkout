@@ -5,6 +5,7 @@ struct TrackWorkoutView: View {
     let templateName: String
     @State private var exercises: [(id: Int64, name: String, sets: [(reps: Int, weight: Int)])] = []
     @State private var workoutDate: Date = Date()
+    @State private var showSaveConfirmation: Bool = false
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -74,7 +75,9 @@ struct TrackWorkoutView: View {
                     hideKeyboard()
                 })
 
-            Button(action: saveWorkout) {
+            Button(action: {
+                showSaveConfirmation = true
+            }) {
                 Text("Save Workout")
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -82,6 +85,14 @@ struct TrackWorkoutView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     .padding()
+            }
+            .alert(isPresented: $showSaveConfirmation) {
+                Alert(
+                    title: Text("Confirm Save"),
+                    message: Text("Are you sure you want to save and end this workout?"),
+                    primaryButton: .default(Text("Save"), action: saveWorkout),
+                    secondaryButton: .cancel()
+                )
             }
 
             Spacer()
