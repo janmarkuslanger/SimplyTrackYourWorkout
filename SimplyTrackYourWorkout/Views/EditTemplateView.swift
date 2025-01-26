@@ -13,6 +13,7 @@ struct EditTemplateView: View {
     let onSave: () -> Void
     let onDelete: () -> Void
     @State private var showDeleteConfirmation: Bool = false
+    @State private var showEditConfirmation: Bool = false
 
     init(templateID: Int64, currentName: String, onSave: @escaping () -> Void, onDelete: @escaping () -> Void) {
         self.templateID = templateID
@@ -66,6 +67,9 @@ struct EditTemplateView: View {
                         secondaryButton: .cancel()
                     )
                 }
+                .alert(isPresented: $showEditConfirmation) {
+                    Alert(title: Text("Success"), message: Text("Template is updated"))
+                }
                 
 
                 Spacer()
@@ -79,6 +83,7 @@ struct EditTemplateView: View {
         guard !templateName.isEmpty else { return }
         if TemplateManager.shared.updateTemplate(id: templateID, newName: templateName) {
             onSave()
+            showEditConfirmation = true
         } else {
             print("Failed to update template \(templateID)")
         }
