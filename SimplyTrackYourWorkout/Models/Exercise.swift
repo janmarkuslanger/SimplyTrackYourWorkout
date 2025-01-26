@@ -94,6 +94,11 @@ struct ExerciseConstants {
         77: Exercise(id: 77, name: "Pull Down (Behind-the-Neck)", focus: "Lats & Traps"),
         78: Exercise(id: 78, name: "Pull Down (Straight Arm)", focus: "Lats & Core"),
         79: Exercise(id: 79, name: "Pull Down (Reverse)", focus: "Lats & Biceps"),
-        80: Exercise(id: 80, name: "Pull Down (Dual Cable)", focus: "Lats & Unilateral Strength")
+        80: Exercise(id: 80, name: "Pull Down (Dual Cable)", focus: "Lats"),
+        81: Exercise(id: 81, name: "Hip thrust (Barbell)", focus: "Glutes"),
+        82: Exercise(id: 82, name: "Hip thrust (Machine)", focus: "Glutes"),
+        83: Exercise(id: 83, name: "Adduction (Machine)", focus: "Adduction"),
+        84: Exercise(id: 84, name: "Abduction (Machine)", focus: "Abduction"),
+        85: Exercise(id: 85, name: "Kick backs", focus: "Glutes")
     ]
 }
