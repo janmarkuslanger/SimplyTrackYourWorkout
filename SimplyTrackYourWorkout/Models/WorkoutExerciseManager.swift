@@ -49,7 +49,7 @@ class WorkoutExerciseManager {
     
     func getLastExerciseId(templateExerciseId: Int64) -> Int64? {
         do {
-            let query = workoutExercises.filter(workoutExerciseTemplateExerciseID == templateExerciseId)
+            let query = workoutExercises.filter(workoutExerciseTemplateExerciseID == templateExerciseId).order(workoutExerciseID.desc)
             if let exercise = try db?.pluck(query) {
                 return exercise[workoutExerciseID]
             }
