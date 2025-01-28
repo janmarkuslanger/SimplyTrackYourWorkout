@@ -70,11 +70,11 @@ struct WorkoutDetailView: View {
     }
 
     private func loadWorkoutDetails() {
-            let workoutExercises = WorkoutExerciseManager.shared.getWorkoutExercises(workoutID: workoutID)
+        let workoutExercises = WorkoutExerciseManager.shared.getWorkoutExercises(workoutID: workoutID)
 
-            exercises = workoutExercises.compactMap { exercise in
-                let sets = WorkoutSetManager.shared.readWorkoutSets(exerciseID: exercise.id)
-                return (exerciseID: exercise.exerciseID, sets: sets)
-            }
+        exercises = workoutExercises.compactMap { exercise in
+            let sets = WorkoutSetManager.shared.readWorkoutSets(exerciseID: exercise.id)
+            return (exerciseID: exercise.exerciseID, sets: sets)
         }
+    }
 }

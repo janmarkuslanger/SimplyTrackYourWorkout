@@ -15,8 +15,8 @@ struct TrackWorkoutView: View {
 
             List {
                 ForEach(0..<exercises.count, id: \..self) { exerciseIndex in
-                    let lastSetValues = loadLastWorkoutValues(for: exercises[exerciseIndex].exerciseID)
-
+                    let lastSetValues = loadLastWorkoutValues(for: exercises[exerciseIndex].id)
+                    
                     Section(header: Text(getExerciseName(by: exercises[exerciseIndex].exerciseID))) {
                         ForEach(0..<exercises[exerciseIndex].sets.count, id: \..self) { setIndex in
                             VStack(alignment: .leading) {
@@ -106,7 +106,7 @@ struct TrackWorkoutView: View {
     }
 
     private func loadLastWorkoutValues(for exerciseID: Int64) -> [(reps: Int, weight: Int)] {
-        return WorkoutSetManager.shared.getLastWorkoutSetsForExercise(exerciseID: exerciseID)
+        return WorkoutSetManager.shared.getLastWorkoutSetsForExercise(templateExerciseID: exerciseID)
     }
 
     private func loadExercises() {

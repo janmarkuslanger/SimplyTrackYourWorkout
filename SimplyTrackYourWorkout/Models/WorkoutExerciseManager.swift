@@ -19,7 +19,6 @@ class WorkoutExerciseManager {
     private init() {
         db = DatabaseManager.shared.getConnection()
     }
-
     
     func addWorkoutExercise(workoutID: Int64, templateExerciseID: Int64) -> Int64? {
         do {
@@ -48,6 +47,18 @@ class WorkoutExerciseManager {
         return false
     }
     
+    func getLastExerciseId(templateExerciseId: Int64) -> Int64? {
+        do {
+            let query = workoutExercises.filter(workoutExerciseTemplateExerciseID == templateExerciseId)
+            if let exercise = try db?.pluck(query) {
+                return exercise[workoutExerciseID]
+            }
+        } catch {
+            print("Error getting template name: \(error)")
+        }
+        return nil
+    }
+
     func getWorkoutExercises(workoutID: Int64) -> [(id: Int64, exerciseID: Int64)] {
         var exercises: [(id: Int64, exerciseID: Int64)] = []
         do {

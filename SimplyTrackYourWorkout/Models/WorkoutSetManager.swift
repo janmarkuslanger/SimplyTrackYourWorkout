@@ -33,12 +33,17 @@ class WorkoutSetManager {
         }
     }
     
-    func getLastWorkoutSetsForExercise(exerciseID: Int64) -> [(reps: Int, weight: Int)] {
+    func getLastWorkoutSetsForExercise(templateExerciseID: Int64) -> [(reps: Int, weight: Int)] {
         var lastSets: [(reps: Int, weight: Int)] = []
+        
+        guard let workoutExerciseId = WorkoutExerciseManager.shared.getLastExerciseId(templateExerciseId: templateExerciseID) else {
+                return [(reps: 0, weight: 0)]
+            }
+        
         do {
             let query = workoutSets
-                .filter(workoutSetExerciseID == exerciseID)
-                .order(workoutSetID.asc)
+                .filter(workoutSetExerciseID == workoutExerciseId)
+                .order(workoutSetID.desc)
 
             if let db = db {
                 for set in try db.prepare(query) {
@@ -66,8 +71,6 @@ class WorkoutSetManager {
         }
         return sets
     }
-
-
 
     func deleteWorkoutSet(setID: Int64) -> Bool {
         do {
