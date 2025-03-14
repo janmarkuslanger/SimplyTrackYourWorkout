@@ -48,6 +48,9 @@ class TemplateExerciseManager {
         } catch {
             print("Error reading template exercises: \(error)")
         }
+        
+        exercises.sort { $0.sortIndex < $1.sortIndex }
+            
         return exercises
     }
 
@@ -70,11 +73,10 @@ class TemplateExerciseManager {
         return false
     }
 
-    func updateTemplateExercise(id: Int64, newExerciseID: Int64, newSets: Int) -> Bool {
+    func updateTemplateExerciseSets(id: Int64, newSets: Int) -> Bool {
         do {
             let exercise = templateExercises.filter(templateExerciseID == id)
             if try db?.run(exercise.update(
-                templateExerciseExerciseID <- newExerciseID,
                 templateExerciseSets <- newSets
             )) ?? 0 > 0 {
                 return true

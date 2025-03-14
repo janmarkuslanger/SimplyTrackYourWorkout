@@ -5,6 +5,11 @@ struct EditTemplateExercisesView: View {
     @State private var exercises: [(id: Int64, exerciseID: Int64, sets: Int, sortIndex: Int)] = []
     @State private var selectedExerciseID: Int64 = ExerciseConstants.exercises.first?.key ?? 0
     @State private var sets: String = ""
+    
+    
+    
+    @State private var updateExerciseId: Int64 = 0
+    @State private var updatedSets: String = ""
 
     var body: some View {
         VStack {
@@ -18,18 +23,41 @@ struct EditTemplateExercisesView: View {
                         }
                         Spacer()
                         Button(action: {
+                            updateExercise(exercise.id)
+                        }) {
+                            Image(systemName: "pencil")
+                                .foregroundColor(.red)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        Spacer()
+                        Button(action: {
                             deleteExercise(exercise.id)
                         }) {
                             Image(systemName: "trash")
                                 .foregroundColor(.red)
                         }
                         .buttonStyle(BorderlessButtonStyle())
+                        
                     }
                 }
                 .onMove(perform: moveExercise)
             }
             .toolbar {
                 EditButton()
+            }
+            
+            if updateExerciseId > 0 {
+                TextField("Sets", text: $updatedSets)
+                    .keyboardType(.numberPad)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                Button(action: updateExerciseSets) {
+                    Text("Update sets")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
             }
 
             Picker("Exercise", selection: $selectedExerciseID) {
@@ -82,6 +110,22 @@ struct EditTemplateExercisesView: View {
             sortIndex: newSortIndex
         ) {
             sets = ""
+            loadExercises()
+        }
+    }
+    
+    private func updateExercise(_ id: Int64) {
+        updateExerciseId = id
+    }
+    
+    private func updateExerciseSets() {
+        guard updateExerciseId > 0, let setsValue = Int(updatedSets) else {
+            return
+        }
+        
+        if (TemplateExerciseManager.shared.updateTemplateExerciseSets(id: updateExerciseId, newSets: setsValue)) {
+            updateExerciseId = 0
+            updatedSets = ""
             loadExercises()
         }
     }

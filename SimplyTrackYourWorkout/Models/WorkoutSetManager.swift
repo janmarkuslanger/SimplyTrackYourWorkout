@@ -43,7 +43,7 @@ class WorkoutSetManager {
         do {
             let query = workoutSets
                 .filter(workoutSetExerciseID == workoutExerciseId)
-                .order(workoutSetID.desc)
+                .order(workoutSetID)
 
             if let db = db {
                 for set in try db.prepare(query) {
