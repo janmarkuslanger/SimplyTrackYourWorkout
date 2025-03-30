@@ -65,15 +65,20 @@ struct TrackWorkoutView: View {
                         Button(action: {
                             addSet(to: exerciseIndex)
                         }) {
-                            Text("Add Set")
-                                .foregroundColor(.blue)
+                            HStack {
+                                Spacer()
+                                Text("➕ Add Set")
+                                    .foregroundColor(.blue)
+                                    .padding()
+                                Spacer()
+                            }
+                            .background(Color(UIColor.systemGray6))
+                            .cornerRadius(8)
                         }
+                        .listRowInsets(EdgeInsets())
                     }
                 }
             }
-            .simultaneousGesture(TapGesture().onEnded {
-                hideKeyboard()
-            })
 
             Button(action: {
                 showSaveConfirmation = true
