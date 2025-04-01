@@ -79,6 +79,11 @@ struct TrackWorkoutView: View {
                     }
                 }
             }
+            .padding()
+            .background(Color(.systemBackground))
+            .simultaneousGesture(TapGesture().onEnded {
+                hideKeyboard()
+            })
 
             Button(action: {
                 showSaveConfirmation = true
